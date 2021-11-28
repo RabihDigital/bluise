@@ -1,8 +1,8 @@
 {
-  "name": "Bluise",
-  "shortName": "Bluise",
-  "description": "A Nuxt.js & Netlify CMS boilerplate.",
+  "name": "Rabih Techno",
+  "shortName": "R.Techno",
+  "description": "Berita dan informasi Teknologi yang sedang berkembang di seluruh dunia",
   "themeColor": "#0b3765",
   "backgroundColor": "#ffffff",
-  "lang": "en"
+  "lang": "id"
 }
