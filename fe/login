@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <base href="staticp/webiv2info/" />
+    <title>Desjardins Assurances - Connexion</title>
+
+    <meta charset="utf-8" />
+    <meta name="version" content="1.1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="fr\css\desjardins.ico" rel="shortcut icon" id="favicon" />
+    <link href="fr\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="fr\css\fwd-bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="fr\css\site.css" rel="stylesheet" type="text/css" />
+    <link href="fr\css\spinner.css" rel="stylesheet" type="text/css" />
+
+    <script src="fr\js\jquery.min.js" type="text/javascript"></script>
+    <script src="fr\js\jquery.validate.min.js" type="text/javascript"></script>
+    <script
+      src="fr\js\jquery.cookies.2.2.0.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="fr\js\sessionTimeout.js" type="text/javascript"></script>
+    <script src="fr\js\utility.js" type="text/javascript"></script>
+    <script src="fr\js\bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="fr\js\fwd.bundle.min.js" type="text/javascript"></script>
+    <script
+      src="fr\js\jquery.validate.messages_fr.js"
+      type="text/javascript"
+    ></script>
+    <script src="../auth0/auth0.9.11.3.min.js" type="text/javascript"></script>
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <script>
+      bazadebezolkohpepadr = "1782669677";
+    </script>
+    <script
+      type="text/javascript"
+      src="https://id.desjardins.com/akam/13/6a416053"
+      defer
+    ></script>
+  </head>
+
+  <body class="ib4">
+    <div id="masterHeader">
+      <ul id="liensHaut">
+        <li>
+          <a
+            class="nousJoindre"
+            href="https://www.webi.desjardinsassurancevie.com/fr/public/Pages/NousJoindre.aspx"
+            target="_blank"
+            >Nous joindre</a
+          >
+        </li>
+        <li>
+          <a
+            class="changeLanguage"
+            lang="en"
+            href="javascript:reset('en')"
+            title="Change your language"
+            >English</a
+          >
+        </li>
+      </ul>
+      <div id="headerSection" class="container-fluid">
+        <div class="row">
+          <a class="col-xs-18" href="javascript:urlBaseWEBIV2Info()">
+            <!-- Logo  -->
+            <div>
+              <img
+                id="logoIllustration"
+                alt="Webi"
+                title="Webi"
+                src="fr\images\logo.gif"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div id="secureSection">
+        <div>
+          <span id="labelSectionSecure">Section s&#xE9;curis&#xE9;e</span>
+          <span id="logoCadenas">
+            <a href="javascript:afficherSecurite('fr-CA');">
+              <span class="sr-only"
+                >Section s&#xE9;curis&#xE9;e S&apos;ouvre dans une nouvelle
+                fen&#xEA;tre</span
+              >
+              <svg
+                version="1.1"
+                id="cadenas"
+                xmlns="http://www.w3.org/2000/svg"
+                xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="40px"
+                height="40px"
+                viewBox="0 0 40 40"
+                enable-background="new 0 0 40 40"
+                space="preserve"
+              >
+                <circle
+                  stroke-width="5"
+                  stroke-miterlimit="10"
+                  cx="20.042"
+                  cy="20.042"
+                  r="17.042"
+                />
+                <path
+                  d="M26.69,18.771h-0.882v-3.303c0-2.035-1.909-3.96-3.926-3.96H18.51c-2.017,0-3.926,1.925-3.926,3.96v3.303
+	                            H13.7c-0.24,0-0.436,0.173-0.436,0.387v9.13c0,0.213,0.196,0.387,0.436,0.387H26.69c0.242,0,0.438-0.174,0.438-0.387v-9.13
+	                            C27.128,18.945,26.933,18.771,26.69,18.771 M17.225,15.468c0-0.924,0.414-1.319,1.32-1.319h3.302c0.906,0,1.32,0.395,1.32,1.319
+	                            v3.303h-5.942V15.468z M20.856,23.677v1.696c0,0.183-0.147,0.33-0.331,0.33h-0.66c-0.181,0-0.33-0.147-0.33-0.33v-1.696
+	                            c-0.393-0.229-0.66-0.649-0.66-1.137c0-0.729,0.593-1.321,1.32-1.321c0.729,0,1.321,0.592,1.321,1.321
+	                            C21.517,23.027,21.249,23.447,20.856,23.677"
+                />
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="isolation-bootstrap-3 container-fluid">
+      <h1>Connexion</h1>
+      <div
+        class="error-group alert alert-success"
+        style="display: none"
+        id="resetConfirmation"
+      >
+        <span>Mot de passe r&#xE9;initialis&#xE9; avec succ&#xE8;s</span>
+      </div>
+      <form method="post" onsubmit="authentifier(event)">
+        <div
+          id="warningBox"
+          class="error-group alert alert-danger hidden"
+          data-valmsg-summary="true"
+        >
+          <span tabindex="-1" id="warningbox-label" class
+            >Les erreurs suivantes ont &#xE9;t&#xE9; d&#xE9;tect&#xE9;es :</span
+          >
+          <ul></ul>
+        </div>
+
+        <div class="form-group">
+          <div class="row" id="loginGroup">
+            <div class="col-md-8 col-xs-24">
+              <label for="UserName">Code d&apos;utilisateur</label>
+              <input
+                aria-required="True"
+                autocomplete="off"
+                autofocus="autofocus"
+                class="form-control"
+                data-val="true"
+                data-val-length="Le champ &amp;#39;Code d&amp;#39;utilisateur&amp;#39; est obligatoire. (IES0526C)"
+                data-val-length-max="36"
+                data-val-regex="Le champ &amp;#39;Code d&amp;#39;utilisateur&amp;#39; est obligatoire. (IES0526C)"
+                data-val-regex-pattern="^[^\n\r]+$"
+                data-val-required="Le champ &amp;#39;Code d&amp;#39;utilisateur&amp;#39; est obligatoire. (IES0526C)"
+                id="UserName"
+                maxlength="36"
+                name="UserName"
+                type="text"
+                value
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group" id="passwordGroup">
+          <div class="row">
+            <div class="col-md-8 col-xs-24">
+              <label for="Password">Mot de passe</label>
+              <input
+                aria-required="True"
+                autocomplete="off"
+                class="form-control"
+                data-val="true"
+                data-val-regex="Le champ &amp;#39;Mot de passe&amp;#39; est obligatoire. (IES0527C)"
+                data-val-regex-pattern="^[^\n\r]+$"
+                data-val-required="Le champ &amp;#39;Mot de passe&amp;#39; est obligatoire. (IES0527C)"
+                id="Password"
+                name="Password"
+                type="password"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div id="resetPassword" class="col-md-8 col-xs-24">
+              <a href="javascript:passwordResetRequest()"
+                >Mot de passe oubli&#xE9;?</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div id="inscription" class="col-md-8 col-xs-24">
+              <a
+                href="https://www.webi.desjardinsassurancevie.com/fr/Public/Pages/InscriptionWebi.aspx"
+                >Inscrivez-vous &#xE0; Webi</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-xs-24">
+            <input
+              type="submit"
+              id="submitButton"
+              class="btn btn-primary"
+              value="Entrer"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+        var submitted = false;
+        var warningBox = $("#warningBox"),
+          warningList = $("#warningBox ul");
+        warningBox.not(".hidden").children("span").focus();
+        var spanErr = '<span class="sr-only">Erreur</span>';
+
+        for (var m in $.validator.messages) {
+          $.validator.messages[m] = spanErr + $.validator.messages[m];
+        }
+
+        var summaryMessages = {
+          UserName:
+            "Le champ &#39;Code d&#39;utilisateur&#39; est obligatoire. (IES0526C)",
+          Password:
+            "Le champ &#39;Mot de passe&#39; est obligatoire. (IES0527C)",
+        };
+
+        $("form").validate({
+          rules: {
+            UserName: { required: true },
+            Password: { required: true },
+          },
+          errorPlacement: function (error, element) {
+            var elem = $(element);
+            error.insertBefore(element);
+          },
+          highlight: function (element, errorClass, validClass) {
+            $(element).addClass(errorClass).removeClass(validClass);
+          },
+          unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass(errorClass).addClass(validClass);
+          },
+          showErrors: function (errorMap, errorList) {
+            if (submitted) {
+              warningList.empty();
+              $.each(errorList, function () {
+                var message = summaryMessages[this.element.name];
+                if (message.hasOwnProperty(this.method)) {
+                  message = message[this.method];
+                }
+                var lien = document.location.href.split("#")[0];
+                warningList.append(
+                  '<li><a href="' +
+                    lien +
+                    "#" +
+                    this.element.id +
+                    '">' +
+                    message +
+                    "</a></li>"
+                );
+              });
+              warningBox.removeClass("hidden");
+              warningBox.find("span").focus();
+              submitted = false;
+            }
+            this.defaultShowErrors();
+          },
+          invalidHandler: function (form, validator) {
+            submitted = true;
+          },
+        });
+      });
+    </script>
+    <div id="masterFooter">
+      <ul class="liensBas">
+        <li>
+          <a
+            href="https://www.desjardinsassurancevie.com/fr/utilitaires/securite/pages/securite.aspx"
+            target="_blank"
+          >
+            S&#xE9;curit&#xE9;<span class="sr-only"
+              >S&apos;ouvre dans une nouvelle fen&#xEA;tre</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.desjardinsassurancevie.com/fr/avis-juridique/politique-de-confidentialite"
+            target="_blank"
+          >
+            Confidentialit&#xE9;<span class="sr-only"
+              >S&apos;ouvre dans une nouvelle fen&#xEA;tre</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.desjardinsassurancevie.com/fr/a-propos-desjardins-assurances/notre-engagement-envers-la-societe/accessibilite-pour-les-personnes-handicapees"
+            target="_blank"
+          >
+            Accessibilit&#xE9;<span class="sr-only"
+              >S&apos;ouvre dans une nouvelle fen&#xEA;tre</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.desjardinsassurancevie.com/fr/avis-juridique"
+            target="_blank"
+          >
+            Avis juridique<span class="sr-only"
+              >S&apos;ouvre dans une nouvelle fen&#xEA;tre</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.webi.desjardinsassurancevie.com/fr/public/Pages/Convention.aspx"
+            target="_blank"
+          >
+            Convention d&apos;acc&#xE8;s &#xE0; l&apos;extranet<span
+              class="sr-only"
+              >S&apos;ouvre dans une nouvelle fen&#xEA;tre</span
+            >
+          </a>
+        </li>
+      </ul>
+      <div class="copyright">
+        <p>
+          Copyright &#xA9;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Desjardins S&#xE9;curit&#xE9; financi&#xE8;re. Tous droits
+          r&#xE9;serv&#xE9;s.
+        </p>
+        <p>
+          Desjardins Assurances d&#xE9;signe Desjardins S&#xE9;curit&#xE9;
+          financi&#xE8;re, compagnie d&apos;assurance vie.
+        </p>
+      </div>
+    </div>
+
+    <noscript>
+      <img
+        alt="DCSIMG"
+        id="DCSIMG"
+        width="1"
+        height="1"
+        src="https://sdc-dev.dsf-dfs.com/dcscal4w100000woczhp24e1n_5v8s/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"
+      />
+    </noscript>
+    <script>
+      setTimeout(function () {
+        var link = document.getElementById("favicon");
+        if (link != null) link.setAttribute("href", "fr/css/desjardins.ico");
+      }, 1000);
+    </script>
+    <script type="text/javascript" src="fr/js/bundle.js"></script>
+    <noscript
+      ><img
+        src="https://id.desjardins.com/akam/13/pixel_6a416053?a=dD05NTg5NDJiMTZkNjFjNDYxNDcyNTU5N2YwMzY3Nzg0MDBhNmU4NDg0JmpzPW9mZg=="
+        style="
+          visibility: hidden;
+          position: absolute;
+          left: -999px;
+          top: -999px;
+        "
+    /></noscript>
+    <script
+      type="text/javascript"
+      src="/d_b4/Q8Zd/7/d/47q-db3A/Y3QOh4LLfLQpfEaa/c3wnAQ/JUh2UHgG/MTA"
+    ></script>
+  </body>
+</html>
